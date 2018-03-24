@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<request>
+	<dataSet>
+		<fields>
+			<sys_key><![CDATA[발급받은sys_key입력]]></sys_key>
+			<svc_id><![CDATA[svcs00042]]></svc_id>
+			<ds_cd><![CDATA[0]]></ds_cd>
+			<search_date><![CDATA[20160729]]></search_date>
+			<trbl_accp_no><![CDATA[ER160729-000009]]></trbl_accp_no>
+		</fields>
+	</dataSet>
+</request>

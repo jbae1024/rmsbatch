@@ -1,0 +1,43 @@
+spring:
+    mvc:
+        view:
+            prefix: /WEB-INF/jsp/
+            suffix: .jsp
+    jpa:
+#        database: mysql
+        generate-ddl: false
+        show-sql: true
+        hibernate:
+            ddl-auto: none
+            naming-strategy: org.springframework.boot.orm.jpa.hibernate.SpringNamingStrategy
+        properties:
+            hibernate.cache.use_second_level_cache: false
+            hibernate.cache.use_query_cache: false
+            hibernate.generate_statistics: false
+            hibernate.hbm2ddl.auto: none
+    h2:
+        console:
+            enabled: true
+    datasource:
+        initialize: false
+datasource:
+    rms:
+        driverClassName: org.mariadb.jdbc.Driver
+        url: jdbc:mysql://localhost:3306/rmsdb?useUnicode=true&charaterEncoding=utf-8
+        username: root
+        password: qwer1234
+        hibernate:
+            dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+    rims:
+        driverClassName: oracle.jdbc.OracleDriver
+        url: jdbc:oracle:thin:@//150.2.223.245:1521/ISIP
+        username: rims
+        password: rims
+        hibernate:
+            dialect: org.hibernate.dialect.Oracle10gDialect
+            
+server.port: 8081      
+  
+hioms.riskmaster.cron: '*/20 * * * * *'
+
+#himosbatch.riskmaster.startDate: 333

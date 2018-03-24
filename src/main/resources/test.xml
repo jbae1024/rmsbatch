@@ -1,0 +1,61 @@
+<?xml version=”1.0” encoding=”UTF-8” ?> 
+- <wsdl:definitions targetNamespace=”http://webservice.om.skcc.com” xmlns:apachesoap=”http://xml.apache.org/xml-soap” xmlns:impl=”http://webservice.om.skcc.com” xmlns:intf=”http://webservice.om.skcc.com” xmlns:wsdl=”http://schemas.xmlsoap.org/wsdl/” xmlns:wsdlsoap=”http://schemas.xmlsoap.org/wsdl/soap/” xmlns:xsd=”http://www.w3.org/2001/XMLSchema”>
+	<!–
+	WSDL created by Apache Axis version: 1.4
+	Built on Apr 22, 2006 (06:55:48 PDT)
+	-!>
+	 
+	<wsdl:types>
+		<schema elementFormDefault=”qualified” targetNamespace=”http://webservice.om.skcc.com” xmlns=”http://www.w3.org/2001/XMLSchema”>
+			<element name=”getOmWebservice”>
+				<complexType>
+					<sequence>
+						<element name=”request” type=”xsd:string” /> 
+					</sequence>
+				</complexType>
+			</element>
+			<element name=”getOmWebserviceResponse”>
+				<complexType>
+					<sequence>
+						<element name=”getOmWebserviceReturn” type=”xsd:string” /> 
+					</sequence>
+				</complexType>
+			</element>
+		</schema>
+	</wsdl:types>
+	
+	<wsdl:message name=”getOmWebserviceResponse”>
+		<wsdl:part element=”impl:getOmWebserviceResponse” name=”parameters” /> 
+	</wsdl:message>
+	
+	<wsdl:message name=”getOmWebserviceRequest”>
+		<wsdl:part element=”impl:getOmWebservice” name=”parameters” /> 
+	</wsdl:message>
+	
+	<wsdl:portType name=”OmWebserviceImpl”>
+		<wsdl:operation name=”getOmWebservice”>
+			<wsdl:input message=”impl:getOmWebserviceRequest” name=”getOmWebserviceRequest” /> 
+			<wsdl:output message=”impl:getOmWebserviceResponse” name=”getOmWebserviceResponse” /> 
+		</wsdl:operation>
+	</wsdl:portType>
+	
+	<wsdl:binding name=”OmWebserviceImplSoapBinding” type=”impl:OmWebserviceImpl”>
+		<wsdlsoap:binding style=”document” transport=”http://schemas.xmlsoap.org/soap/http” /> 
+		<wsdl:operation name=”getOmWebservice”>
+			<wsdlsoap:operation soapAction=”” /> 
+			<wsdl:input name=”getOmWebserviceRequest”>
+				<wsdlsoap:body use=”literal” /> 
+			</wsdl:input>
+			<wsdl:output name=”getOmWebserviceResponse”>
+				<wsdlsoap:body use=”literal” /> 
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	
+	<wsdl:service name=”OmWebserviceImplService”>
+		<wsdl:port binding=”impl:OmWebserviceImplSoapBinding” name=”OmWebserviceImpl”>
+		<wsdlsoap:address location=”http://203.235.210.94:9280/omwebservice/services/OmWebserviceImpl” /> 
+		</wsdl:port>
+	</wsdl:service>
+	
+</wsdl:definitions>

@@ -1,0 +1,26 @@
+REST_API_URL_WITH_KEY=https://api.themoviedb.org/3/movie/top_rated?api_key=06f8918bdd7e8586c6efd203ff34f3ba&page=
+
+server.port=8081
+
+spring.h2.console.enabled=true
+
+#spring.datasource.url=jdbc:h2:mem:test;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+#spring.datasource.username=sa
+#spring.datasource.password=
+
+xml.to.database.job.source.file.path=data/students.xml
+xml.to.database.job.cron=*/20 * * * * *
+
+spring.jpa.show-sql= true
+
+
+datasource.rms.driverClassName=org.h2.Driver
+datasource.rms.url=jdbc:h2:mem:test;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+datasource.rms.username=sa
+datasource.rms.password:
+
+datasource.rims.driverClassName=com.mysql.jdbc.Driver
+datasource.rims.url: jdbc:mysql://localhost:3306/test?useUnicode=true&charaterEncoding=utf-8
+datasource.rims.username: root
+datasource.rims.password: qwer1234
+datasource.rims.hibernate.dialect: org.hibernate.dialect.MySQL5InnoDBDialect

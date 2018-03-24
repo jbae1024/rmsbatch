@@ -1,0 +1,7 @@
+himosbatch:
+  riskmaster:
+    startDate: 20160813P
+    endDate: 
+    periodDay: 7
+    filePath: /Users/jinhwancom/sts-bundle/workspace/rmsbatch/src/batchxml/
+    fileName: riskmasterinfo

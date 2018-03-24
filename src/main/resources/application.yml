@@ -1,0 +1,72 @@
+spring:
+    mvc:
+        view:
+            prefix: /WEB-INF/jsp/
+            suffix: .jsp
+    jpa:
+#        database: mysql
+        generate-ddl: false
+        show-sql: true
+        hibernate:
+            ddl-auto: none
+            naming-strategy: org.springframework.boot.orm.jpa.hibernate.SpringNamingStrategy
+        properties:
+            hibernate.cache.use_second_level_cache: false
+            hibernate.cache.use_query_cache: false
+            hibernate.generate_statistics: false
+            hibernate.hbm2ddl.auto: update
+    h2:
+        console:
+            enabled: true
+    datasource:
+        initialize: false
+datasource:
+    rms:
+        driverClassName: org.mariadb.jdbc.Driver
+        url: jdbc:mysql://10.250.208.234:3306/rmsdb?useUnicode=true&charaterEncoding=utf-8&autoReconnect=true
+        username: root
+        password: qwer1234
+        hibernate:
+            dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+    rims:
+        driverClassName: org.mariadb.jdbc.Driver
+        url: jdbc:mysql://10.250.208.234:3306/rimsdb?useUnicode=true&charaterEncoding=utf-8&autoReconnect=true
+        username: root
+        password: qwer1234
+        hibernate:
+            dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+#    rims:
+#        driverClassName: oracle.jdbc.OracleDriver
+#        url: jdbc:oracle:thin:@//150.2.223.245:1521/ISIP
+#        username: rims
+#        password: rims
+#        hibernate:
+#            dialect: org.hibernate.dialect.Oracle10gDialect
+            
+server.port: 8081      
+  
+hioms.riskMasterInfoJob.cron: '0 0 02 * * ?'
+hioms.riskCauseJob.cron: '0 0 02 * * ?'
+hioms.reRiskMasterInfoJob.cron: '0 0 02 * * ?'
+hioms.rimsMmsLogJob.cron: '*/20 * * * * *'
+
+
+# sessionVariables=wait_timeout=20 핵심이다. (해당 세션일 때 wait_timeout의 시간을 20초로 세팅한다.)
+# 의미 : request가 20초이상 들어오지 않으면 해당 connector의 연결을 끊어버린다.
+# connector 유효 검증 쿼리
+spring.datasource.validation-query: SELECT 1
+spring.datasource.connection-test-query: SELECT 1
+
+# 테스트를 위해 Connection Pool을 1로 두었다.
+spring.datasource.max-active: 1
+spring.datasource.max-idle: 1
+spring.datasource.min-idle: 0
+ 
+# Evictor Thread가 test-while-idle이 true면 6초마다 connection pool에 validation-query를 수행
+# 또한 min-evictable-idle-time-millis의 유후 시간(3초)이 지난 connector도 제거 (기본값 -1 : Evictor Thread 비활성화)
+spring.datasource.time-between-eviction-runs-millis: 6000
+spring.datasource.min-evictable-idle-time-millis: 3000
+spring.datasource.test-while-idle: true
+ 
+# connector를 가져올때 validation-query를 수행하여 검증한다고함
+spring.datasource.test-on-borrow: true

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<response>
+  <transaction>
+    <id>skcc.om.EXTIF.EXTIFMgr#svcs00042</id>
+    <startDate>2016-08-04T15:48:22.422</startDate>
+    <endDate>2016-08-04T15:48:24.148</endDate>
+  </transaction>
+  <dataSet>
+    <message>
+      <result>OK</result>
+      <messageId>SKFI4008</messageId>
+      <messageName>총 2 건이 검색되었습니다.</messageName>
+      <messageReason></messageReason>
+      <messageRemark>Find</messageRemark>
+    </message>
+    <fields>
+      <reqtNo>EXT-000038-00042-0000012</reqtNo>
+    </fields>
+    <recordSet id="trbl_rs">
+      <nc_pageNo>-1</nc_pageNo>
+      <nc_recordCountPerPage>-1</nc_recordCountPerPage>
+      <nc_totalRecordCount>-1</nc_totalRecordCount>
+      <record>
+        <장애접수번호>ER160729-000002</장애접수번호>
+        <장애제목>일부 판매점 스캔등록 메뉴 일부 선택불가 장애 발생</장애제목>
+        <장애상세내역>일부 판매점 스캔등록 메뉴 일부 선택불가 장애 발생</장애상세내역>
+        <심각도>3</심각도>
+        <장애발생시간>2016-07-29 14:31</장애발생시간>
+        <장애해결시간></장애해결시간>
+        <영향범위></영향범위>
+        <세부원인>바꾼다1</세부원인>
+        <관련문의건수>1</관련문의건수>
+        <조치내역></조치내역>
+      </record>
+    </recordSet>
+    </dataSet>
+</response>
+        
+    

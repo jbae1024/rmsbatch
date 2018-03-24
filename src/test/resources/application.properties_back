@@ -1,0 +1,9 @@
+REST_API_URL_WITH_KEY=https://api.themoviedb.org/3/movie/top_rated?api_key=06f8918bdd7e8586c6efd203ff34f3ba&page=
+
+server.port=8081
+
+spring.h2.console.enabled=true
+
+spring.datasource.url=1234
+spring.datasource.username=sa
+spring.datasource.password=
